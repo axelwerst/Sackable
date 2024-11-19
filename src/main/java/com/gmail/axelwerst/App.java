@@ -6,7 +6,7 @@ import static com.gmail.axelwerst.Sortable.printArray;
 
 public class App {
     public static void main(String[] args) {
-           /* Stackable.Stack<Integer> stack = new Stackable.Stack<>(3); // Стек з максимальним розміром 3
+           Stack<Integer> stack = new Stack<>(3); // Стек з максимальним розміром 3
 
             stack.push(10);
             stack.push(20);
@@ -24,8 +24,12 @@ public class App {
             // Спроба дістати елемент з порожнього стека
             System.out.println("Дістали елемент: " + stack.pop()); // Виведе: "Стек порожній. Немає елементів для діставання."
 
-        */
 
+
+
+
+
+/*
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         System.out.println("Original array:");
         Sortable.printArray(arr);
@@ -40,7 +44,7 @@ public class App {
         int x = 34;
         int result = ob.BinarFindble(arrSort, 0, n - 1, x);
         if (result == -1) System.out.println("Element is not present in array");
-        else System.out.println("Element is present at index " + result);
+        else System.out.println("Element is present at index " + result); */
     }
 }
 
