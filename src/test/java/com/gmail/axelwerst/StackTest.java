@@ -2,6 +2,8 @@ package com.gmail.axelwerst;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
@@ -69,4 +71,34 @@ class StackTest {
         assertEquals(100, stack.pop());
         assertTrue(stack.isEmpty());
     }
+
+
+    @Test
+    void testPopOptionalWhenStackIsEmpty() {
+        Stack<Integer> stack = new Stack<>(3);
+
+        // Викликаємо popOptional, коли стек порожній
+        Optional<Integer> result = stack.popOptional();
+
+        // Перевіряємо, що Optional.empty()
+        assertTrue(result.isEmpty(), "Очікується порожній Optional, якщо стек порожній");
+    }
+
+    @Test
+    void testPopOptionalWhenStackHasElements() {
+        Stack<Integer> stack = new Stack<>(3);
+
+        // Додаємо елементи в стек
+        stack.push(1);
+        stack.push(2);
+
+        // Викликаємо popOptional
+        Optional<Integer> result = stack.popOptional();
+
+        // Перевіряємо, що Optional містить останній елемент (2)
+        assertTrue(result.isPresent(), "Очікується, що Optional не буде порожнім");
+        assertEquals(2, result.get(), "Очікується, що верхній елемент — 2");
+    }
 }
+
+

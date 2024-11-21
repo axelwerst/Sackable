@@ -2,6 +2,7 @@ package com.gmail.axelwerst;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Stack<T> implements Stackable<T> {
     private final List<T> elements;
@@ -44,5 +45,11 @@ public class Stack<T> implements Stackable<T> {
             throw new Exceptions.StackEmptyException("Стек порожній. Немає верхнього елемента.");
         }
         return elements.get(elements.size() - 1);
+    }
+    public Optional<T> popOptional() {
+        if (isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(elements.remove(elements.size() - 1));
     }
 }
